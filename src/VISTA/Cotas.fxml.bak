@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minHeight="316.0" prefHeight="316.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="CONTROLADOR.CotasController">
+  <children>
+    <Button layoutX="416.0" layoutY="232.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="182.0" text="Button" />
+    <TableView layoutX="14.0" layoutY="14.0" prefHeight="288.0" prefWidth="400.0">
+      <columns>
+        <TableColumn prefWidth="75.0" text="COTAS" fx:id="cotas_id" />
+        <TableColumn prefWidth="75.0" text="CANTIDAD" fx:id="cotas_cantidad" />
+      </columns>
+    </TableView>
+  </children>
+</AnchorPane>

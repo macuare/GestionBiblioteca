@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../MODELO/CSS/Usuarios.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="CONTROLADOR.UsuariosController">
+  <children>
+    <TabPane prefHeight="599.0" prefWidth="799.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <tabs>
+        <Tab text="NUEVO USUARIO">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="mainFxmlClass">
+              <children>
+                <Label layoutX="14.0" layoutY="23.0" text="CÉDULA:">
+                  <font>
+                    <Font name="System Bold" size="12.0" fx:id="x1" />
+                  </font>
+                </Label>
+                <Label font="$x1" layoutX="13.0" layoutY="77.0" text="NOMBRES:" />
+                <Label font="$x1" layoutX="13.0" layoutY="122.0" text="APELLIDOS:" />
+                <Label font="$x1" layoutX="13.0" layoutY="189.0" text="TELÉFONO CELULAR:" />
+                <Label font="$x1" layoutX="10.0" layoutY="231.0" text="TELÉFONO HABITACIÓN:" />
+                <Label font="$x1" layoutX="13.0" layoutY="389.0" text="DIRECIÓN DE HABITACIÓN:" />
+                <TextField fx:id="nombres" layoutX="97.0" layoutY="74.0" prefWidth="576.0">
+                  <stylesheets>
+                    <URL value="@../MODELO/estilos.css" />
+                  </stylesheets>
+                </TextField>
+                <TextField fx:id="apellidos" layoutX="97.0" layoutY="119.0" prefWidth="576.0">
+                  <stylesheets>
+                    <URL value="@../MODELO/estilos.css" />
+                  </stylesheets>
+                </TextField>
+                <TextField fx:id="telf_cel" layoutX="137.0" layoutY="186.0" prefWidth="427.0">
+                  <stylesheets>
+                    <URL value="@../MODELO/estilos.css" />
+                  </stylesheets>
+                </TextField>
+                <TextField fx:id="telf_hab" layoutX="160.0" layoutY="225.0" prefWidth="404.0">
+                  <stylesheets>
+                    <URL value="@../MODELO/estilos.css" />
+                  </stylesheets>
+                </TextField>
+                <Label font="$x1" layoutX="13.0" layoutY="296.0" text="CORREO ELECTRÓNICO:" />
+                <TextField fx:id="correo" layoutX="160.0" layoutY="293.0" prefWidth="501.0">
+                  <stylesheets>
+                    <URL value="@../MODELO/estilos.css" />
+                  </stylesheets>
+                </TextField>
+                <TextArea fx:id="direccion" layoutX="15.0" layoutY="427.0" prefHeight="128.0" prefWidth="586.0" wrapText="true">
+                  <stylesheets>
+                    <URL value="@../MODELO/estilos.css" />
+                  </stylesheets>
+                </TextArea>
+                <Button fx:id="guardar" layoutX="645.0" layoutY="484.0" mnemonicParsing="false" onAction="#GUARDAR" prefHeight="63.0" prefWidth="141.0" text="GUARDAR" textFill="WHITE" />
+                <Label font="$x1" layoutX="219.0" layoutY="23.0" text="INSTITUCIÓN:" />
+                <ComboBox fx:id="institucion" layoutX="304.0" layoutY="20.0" onAction="#INSTITUCION" prefHeight="21.0" prefWidth="467.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <TextField fx:id="cedula" layoutX="74.0" layoutY="20.0" prefWidth="125.0">
+                  <stylesheets>
+                    <URL value="@../MODELO/estilos.css" />
+                  </stylesheets>
+                </TextField>
+                <Label font="$x1" layoutX="13.0" layoutY="339.0" text="CARRERA:" />
+                <ComboBox fx:id="carrera" layoutX="85.0" layoutY="336.0" onAction="#CARRERA" prefHeight="21.0" prefWidth="576.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="TODOS">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="mainFxmlClass">
+              <children>
+                <TableView fx:id="todos" prefHeight="599.0" prefWidth="799.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <columns>
+                    <TableColumn fx:id="t_estado" prefWidth="75.0" text="ESTADO" />
+                    <TableColumn fx:id="t_cedula" prefWidth="75.0" text="CEDULA" />
+                    <TableColumn fx:id="t_nombres" prefWidth="200.0" text="NOMBRES" />
+                    <TableColumn fx:id="t_apellidos" prefWidth="200.0" text="APELLIDOS" />
+                    <TableColumn fx:id="t_telefonos" prefWidth="200.0" text="TELEFONOS" />
+                    <TableColumn fx:id="t_correos" prefWidth="200.0" text="CORREOS" />
+                    <TableColumn fx:id="t_institucion" prefWidth="200.0" text="INSTITUCIÓN" />
+                    <TableColumn fx:id="t_carrera" prefWidth="250.0" text="CARRERA" />
+                  </columns>
+                  <contextMenu>
+                    <ContextMenu>
+                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#ACTUALIZAR" text="REFRESCAR" />
+                        <Menu mnemonicParsing="false" text="ESTADO">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#ACTIVAR_USUARIO" text="ACTIVAR" />
+                            <MenuItem mnemonicParsing="false" onAction="#DESACTIVAR_USUARIO" text="DESACTIVAR" />
+                          </items>
+                        </Menu>
+                      </items>
+                    </ContextMenu>
+                  </contextMenu>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>

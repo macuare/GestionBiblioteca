@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="100.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml">
+  <children>
+    <Pane layoutX="7.0" layoutY="7.0" prefHeight="86.0" prefWidth="586.0" styleClass="pane" />
+    <ProgressBar id="" fx:id="barra" layoutX="84.0" layoutY="28.0" prefHeight="45.0" prefWidth="430.0" />
+    <Label fx:id="informacion" layoutX="85.0" layoutY="76.0" prefWidth="430.0" text="INFORMACIÓN">
+      <font>
+        <Font name="Arial" size="14.0" />
+      </font>
+    </Label>
+    <Label fx:id="avance" alignment="CENTER" layoutX="281.0" layoutY="41.0" text="100 %">
+      <font>
+        <Font size="14.0" />
+      </font>
+    </Label>
+  </children>
+  <stylesheets>
+    <URL value="@CSS/indicador.css" />
+  </stylesheets>
+</AnchorPane>

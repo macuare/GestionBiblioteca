@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" stylesheets="@../MODELO/CSS/Analisis.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLADOR.AnalisisController">
+  <children>
+    <TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <tabs>
+        <Tab text="PRESTAMOS VIGENTES">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView id="mensual" fx:id="vigentes" prefHeight="569.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <columns>
+                    <TableColumn fx:id="vcedulas" prefWidth="90.0" style="" text="CEDULAS" />
+                    <TableColumn fx:id="vcotas" prefWidth="120.0" text="COTAS" />
+                    <TableColumn fx:id="vestado" prefWidth="160.0" text="ESTADO" />
+                    <TableColumn fx:id="vfsalida" prefWidth="200.0" text="FECHA DE SALIDA" />
+                    <TableColumn fx:id="vfentrega" prefWidth="200.0" text="FECHA DE ENTREGA" />
+                  </columns>
+                  <contextMenu>
+                    <ContextMenu>
+                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#VREFRESCAR" text="REFRESCAR" />
+                        <MenuItem mnemonicParsing="false" onAction="#VBUSCAR_USUARIO" text="BUSCAR USUARIO" />
+                      </items>
+                    </ContextMenu>
+                  </contextMenu>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="REGISTRO MENSUAL">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="mensual" prefHeight="569.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <columns>
+                    <TableColumn fx:id="cedulas" prefWidth="90.0" style="" text="CEDULAS" />
+                    <TableColumn fx:id="cotas" prefWidth="120.0" text="COTAS" />
+                    <TableColumn fx:id="estado" prefWidth="160.0" text="ESTADO" />
+                    <TableColumn fx:id="fsalida" prefWidth="200.0" text="FECHA DE SALIDA" />
+                    <TableColumn fx:id="fentrega" prefWidth="200.0" text="FECHA DE ENTREGA" />
+                  </columns>
+                  <contextMenu>
+                    <ContextMenu>
+                      <items>
+                        <MenuItem fx:id="refrescar" mnemonicParsing="false" onAction="#REFRESCAR" text="REFRESCAR" />
+                      </items>
+                    </ContextMenu>
+                  </contextMenu>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="ESTADÍSTICAS">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Label layoutX="14.0" layoutY="14.0" text="TIPO DE ANÁLISIS:" />
+                <ComboBox fx:id="tipo_analisis" layoutX="117.0" layoutY="12.0" onAction="#ANALISIS" prefHeight="21.0" prefWidth="552.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="AVANCES" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <BarChart fx:id="barra_estadisticas" barGap="1.0" prefHeight="526.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="43.0">
+                  <xAxis>
+                     <CategoryAxis side="BOTTOM" />
+                  </xAxis>
+                  <yAxis>
+                     <NumberAxis side="LEFT" />
+                  </yAxis>
+                </BarChart>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="HISTORICO">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="historicos" prefHeight="569.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <columns>
+                    <TableColumn fx:id="h_cedulas" prefWidth="90.0" style="" text="CEDULAS" />
+                    <TableColumn fx:id="h_cotas" prefWidth="120.0" text="COTAS" />
+                    <TableColumn fx:id="h_estado" prefWidth="160.0" text="ESTADO" />
+                    <TableColumn fx:id="h_fsalida" prefWidth="200.0" text="FECHA DE SALIDA" />
+                    <TableColumn fx:id="h_fentrega" prefWidth="200.0" text="FECHA DE ENTREGA" />
+                  </columns>
+                  <contextMenu>
+                    <ContextMenu>
+                      <items>
+                        <MenuItem fx:id="h_refrescar" mnemonicParsing="false" onAction="#HREFRESCAR" text="REFRESCAR" />
+                      </items>
+                    </ContextMenu>
+                  </contextMenu>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+            <Tab text="OTROS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BarChart fx:id="Barra_Otros" layoutX="14.0" layoutY="14.0" prefHeight="543.0" prefWidth="773.0" title="OTROS">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>

@@ -1,0 +1,116 @@
+/* 
+    Document   : estilos
+    Created on : 31/03/2013, 02:48:18 PM
+    Author     : AURORA
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+ 
+}
+
+.combo-box{
+    -fx-background-color:rgb(103, 77, 24, 0.3); 
+}
+
+
+.combo-box-base .arrow-button {
+    -fx-background-color:rgb(103, 77, 24, 0.3); 
+}
+
+.combo-box-base .arrow {
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-background-color:white;
+    -fx-padding: 0.166667em 0.333333em 0.166667em 0.333333em; 
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+    
+}
+
+
+
+
+/*-----------------------------------------*/
+.table-row-cell:empty {
+    -fx-background-color: lightyellow;
+}
+ 
+.table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}
+
+.table-row-cell:focused {
+     -fx-background-color: rgba(36, 92, 10, 0.3);
+        
+}
+
+
+.table-view:focused .table-row-cell:filled:selected .table-cell {
+    -fx-text-fill: red;
+}
+
+
+
+/*------------------------------------------*/
+
+.button {
+    -fx-background-color: rgb(112, 84, 16, 0.3);
+    -fx-effect: dropshadow( one-pass-box , black , 10 , 0.0 , 4 , 4);
+}
+
+.button:hover {
+   -fx-background-color: rgb(117, 81, 147, 0.3);
+   -fx-effect: dropshadow( one-pass-box , #5e1f5e , 10 , 0.0 , 4 , 4);
+}
+
+/*-------------------------------------------*/
+.text-field {
+    -fx-background-insets: 1, 2, 3;
+    -fx-background-radius:9 0 8 0, 9 0 8 0, 9 0 8 0;
+}
+
+.text-area {
+    -fx-background-insets: 1, 2, 3;
+    -fx-background-radius:9 0 8 0, 9 0 8 0, 9 0 8 0;
+    
+}
+/*------------------------------------------------*/
+
+.context-menu {
+  -fx-background-color: #006699;
+  -fx-text-fill: white;
+}
+
+.menu-item .label {
+  -fx-text-fill: yellow;
+}
+
+.menu-item:focused .label {
+  -fx-text-fill: white;
+}
+
+
+/*-------------------------------------------------*/
+/*
+.default-color0.chart-bar { -fx-bar-fill: #7b68ee; }
+.default-color1.chart-bar { -fx-bar-fill: #a9e200; }
+.default-color2.chart-bar { -fx-bar-fill: #22bad9; }
+.default-color3.chart-bar { -fx-bar-fill: #0181e2; }
+.default-color4.chart-bar { -fx-bar-fill: #2f357f; }
+.default-color5.chart-bar { -fx-bar-fill: #860061; }
+.default-color6.chart-bar { -fx-bar-fill: #c62b00; }
+.default-color7.chart-bar { -fx-bar-fill: #ff5700; }
+
+
+*/
+
+
+
+
+
+
+
+
+/*---------------------PERSONALIZADO--------------------------*/
+
+

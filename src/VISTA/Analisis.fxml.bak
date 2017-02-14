@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="CONTROLADOR.AnalisisController">
+  <children>
+    <TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <tabs>
+        <Tab text="PRESTAMOS VIGENTES">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView id="mensual" fx:id="vigentes" prefHeight="569.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <columns>
+                    <TableColumn prefWidth="90.0" style="" text="CEDULAS" fx:id="vcedulas" />
+                    <TableColumn prefWidth="120.0" text="COTAS" fx:id="vcotas" />
+                    <TableColumn prefWidth="160.0" text="ESTADO" fx:id="vestado" />
+                    <TableColumn prefWidth="200.0" text="FECHA DE SALIDA" fx:id="vfsalida" />
+                    <TableColumn prefWidth="200.0" text="FECHA DE ENTREGA" fx:id="vfentrega" />
+                  </columns>
+                  <contextMenu>
+                    <ContextMenu>
+                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#VREFRESCAR" text="REFRESCAR" />
+                      </items>
+                    </ContextMenu>
+                  </contextMenu>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="REGISTRO MENSUAL">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="mensual" prefHeight="569.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <columns>
+                    <TableColumn prefWidth="90.0" style="" text="CEDULAS" fx:id="cedulas" />
+                    <TableColumn prefWidth="120.0" text="COTAS" fx:id="cotas" />
+                    <TableColumn prefWidth="160.0" text="ESTADO" fx:id="estado" />
+                    <TableColumn prefWidth="200.0" text="FECHA DE SALIDA" fx:id="fsalida" />
+                    <TableColumn prefWidth="200.0" text="FECHA DE ENTREGA" fx:id="fentrega" />
+                  </columns>
+                  <contextMenu>
+                    <ContextMenu>
+                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#REFRESCAR" text="REFRESCAR" fx:id="refrescar" />
+                      </items>
+                    </ContextMenu>
+                  </contextMenu>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="ESTADÍSTICAS">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Label layoutX="14.0" layoutY="14.0" text="TIPO DE ANÁLISIS:" />
+                <ComboBox fx:id="tipo_analisis" layoutX="117.0" layoutY="12.0" onAction="#ANALISIS" prefHeight="21.0" prefWidth="552.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <BarChart fx:id="barra_estadisticas" alternativeColumnFillVisible="true" barGap="1.0" categoryGap="20.0" prefHeight="526.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="43.0">
+                  <xAxis>
+                    <CategoryAxis side="BOTTOM">
+                      <categories>
+                        <FXCollections fx:factory="observableArrayList" />
+                      </categories>
+                    </CategoryAxis>
+                  </xAxis>
+                  <yAxis>
+                    <NumberAxis side="LEFT" />
+                  </yAxis>
+                </BarChart>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="HISTORICO">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="historicos" prefHeight="569.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <columns>
+                    <TableColumn prefWidth="90.0" style="" text="CEDULAS" fx:id="h_cedulas" />
+                    <TableColumn prefWidth="120.0" text="COTAS" fx:id="h_cotas" />
+                    <TableColumn prefWidth="160.0" text="ESTADO" fx:id="h_estado" />
+                    <TableColumn prefWidth="200.0" text="FECHA DE SALIDA" fx:id="h_fsalida" />
+                    <TableColumn prefWidth="200.0" text="FECHA DE ENTREGA" fx:id="h_fentrega" />
+                  </columns>
+                  <contextMenu>
+                    <ContextMenu>
+                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#HREFRESCAR" text="REFRESCAR" fx:id="h_refrescar" />
+                      </items>
+                    </ContextMenu>
+                  </contextMenu>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>

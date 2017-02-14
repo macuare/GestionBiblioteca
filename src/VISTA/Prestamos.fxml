@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color:rgba(0,0,0,0.08),&#10;        linear-gradient(#5a61af, #51536d),&#10;linear-gradient(#e4fbff 0%,#cee6fb 10%, #a5d3fb 50%, #88c6fb 51%, #d5faff 100%);" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="CONTROLADOR.PrestamosController">
+  <children>
+    <Label layoutX="14.0" layoutY="14.0" text="CÉDULA:" />
+    <Label layoutX="160.0" layoutY="51.0" text="USUARIO:" />
+    <Pane layoutX="14.0" layoutY="51.0" prefHeight="190.0" prefWidth="130.0" style="-fx-border-color:black;">
+      <children>
+        <ImageView fx:id="foto" fitHeight="180.0" fitWidth="128.0" layoutX="1.0" layoutY="5.0" pickOnBounds="true" />
+      </children>
+    </Pane>
+    <TextField fx:id="cedula" alignment="CENTER" layoutX="71.0" layoutY="11.0" onAction="#VERIFICAR" prefWidth="200.0" text="1111" />
+    <TextField fx:id="usuario" editable="false" layoutX="215.0" layoutY="48.0" prefWidth="547.0" />
+    <TableView fx:id="prestamos" layoutY="267.0" prefHeight="333.0" prefWidth="800.0" style="-fx-background-color:transparent;">
+      <columns>
+        <TableColumn prefWidth="799.0" style="-fx-background-color: rgb(117, 81, 147, 0.3);&#10;   -fx-effect: dropshadow( one-pass-box , #5e1f5e , 10 , 0.0 , 4 , 4);" text="DESCRIPCIÓN" fx:id="descripcion" />
+      </columns>
+      <contextMenu>
+        <ContextMenu>
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#ENTREGAR" text="ENTREGAR LIBRO" fx:id="entregar" />
+          </items>
+        </ContextMenu>
+      </contextMenu>
+    </TableView>
+    <Label layoutX="295.0" layoutY="14.0" text="TIPO DE PRESTAMO:" />
+    <ComboBox id="prestamo" fx:id="tipo" layoutX="415.0" layoutY="12.0" prefHeight="21.0" prefWidth="200.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Label layoutX="343.0" layoutY="138.0" text="COTA:" />
+    <TextField fx:id="cota" alignment="CENTER" layoutX="381.0" layoutY="109.0" prefHeight="74.0" prefWidth="175.0" style="-fx-font-size:20;" text="000-M123-ej1" />
+    <Label layoutX="160.0" layoutY="109.0" text="FECHA DE ENTREGA:" />
+    <TextField fx:id="entrega" alignment="CENTER" editable="false" layoutX="160.0" layoutY="137.0" onMouseClicked="#FECHA" prefWidth="135.0" />
+    <Button fx:id="prestar" disable="true" layoutX="662.0" layoutY="182.0" mnemonicParsing="false" onAction="#PRESTAR_LIBRO" prefHeight="75.0" prefWidth="124.0" text="PRESTAR" />
+    <Label layoutX="381.0" layoutY="241.0" text="PRESTAMOS" />
+  </children>
+  <stylesheets>
+    <URL value="@../MODELO/estilos.css" />
+  </stylesheets>
+</AnchorPane>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="530.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="CONTROLADOR.LibrosController">
+  <children>
+    <TabPane prefHeight="530.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <tabs>
+        <Tab text="NUEVO">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="800.0" style="-fx-background-color:&#10;   linear-gradient(to bottom, rgba(230,240,163,1) 0%,rgba(210,230,56,1) 50%,rgba(195,216,37,1) 51%,rgba(219,240,67,1) 100%);">
+              <children>
+                <ComboBox fx:id="paises" layoutX="307.0" layoutY="252.0" prefHeight="21.0" prefWidth="289.0" style="-fx-background-color:rgb(103, 77, 24, 0.3);">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <TextField fx:id="isbn" layoutX="474.0" layoutY="180.0" prefWidth="200.0" style="-fx-background-insets: 1, 2, 3;&#10;-fx-background-radius:9 0 8 0, 9 0 8 0, 9 0 8 0;" />
+                <Label layoutX="435.0" layoutY="182.0" text="ISBN:">
+                  <font>
+                    <Font name="System Bold" size="12.0" fx:id="x1" />
+                  </font>
+                </Label>
+                <TextField fx:id="paginas" layoutX="494.0" layoutY="214.0" prefWidth="102.0" style="-fx-background-insets: 1, 2, 3;&#10;-fx-background-radius:9 0 8 0, 9 0 8 0, 9 0 8 0;" />
+                <Label font="$x1" layoutX="253.0" layoutY="252.0" text="PAÍS:" />
+                <Label layoutX="93.0" layoutY="313.0" text="COTA">
+                  <font>
+                    <Font name="System Bold" size="16.0" fx:id="x2" />
+                  </font>
+                </Label>
+                <Label font="$x1" layoutX="433.0" layoutY="216.0" text="PAGINAS:" />
+                <Button fx:id="guardar" font="$x2" layoutX="53.0" layoutY="404.0" mnemonicParsing="false" onAction="#GUARDAR_LIBRO" prefHeight="81.0" prefWidth="119.0" text="GUARDAR" textFill="WHITE">
+                  <stylesheets>
+                    <URL value="@../MODELO/estilos.css" />
+                  </stylesheets>
+                </Button>
+                <Label font="$x1" layoutX="14.0" layoutY="14.0" text="PORTADA:" />
+                <Pane layoutX="29.0" layoutY="40.0" prefHeight="260.0" prefWidth="171.0" style="-fx-border-color: black;">
+                  <children>
+                    <ImageView fx:id="foto" fitHeight="260.0" fitWidth="170.0" onMouseClicked="#CARGAR_FOTO" pickOnBounds="true">
+                      <image>
+                        <Image url="@../IMAGENES/sin_foto.jpg" preserveRatio="false" smooth="false" />
+                      </image>
+                    </ImageView>
+                  </children>
+                </Pane>
+                <Label font="$x1" layoutX="220.0" layoutY="348.0" text="ÍNDICE:" />
+                <Label font="$x1" layoutX="252.0" layoutY="18.0" text="CATEGORÍA:" />
+                <TextField fx:id="cantidad" layoutX="320.0" layoutY="216.0" prefWidth="100.0" style="-fx-background-insets: 1, 2, 3;&#10;-fx-background-radius:9 0 8 0, 9 0 8 0, 9 0 8 0;" />
+                <Label font="$x1" layoutX="252.0" layoutY="53.0" text="TÍTULO:" />
+                <Label font="$x1" layoutX="253.0" layoutY="184.0" text="EDICIÓN:" />
+                <ComboBox id="categoria" fx:id="categorias" layoutX="329.0" layoutY="16.0" onAction="#AUTOMATICO" prefHeight="21.0" prefWidth="353.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                  <stylesheets>
+                    <URL value="@../MODELO/estilos.css" />
+                  </stylesheets>
+                </ComboBox>
+                <Label font="$x1" layoutX="253.0" layoutY="148.0" text="EDITORIAL:" />
+                <Label font="$x1" layoutX="252.0" layoutY="217.0" text="CANTIDAD:" />
+                <TextField fx:id="edicion" layoutX="319.0" layoutY="181.0" prefWidth="102.0" style="-fx-background-insets: 1, 2, 3;&#10;-fx-background-radius:9 0 8 0, 9 0 8 0, 9 0 8 0;" />
+                <ComboBox fx:id="editorial" layoutX="323.0" layoutY="145.0" onAction="#VERIFICAR_EDITORIAL" prefHeight="21.0" prefWidth="345.0" style="-fx-background-color:rgb(103, 77, 24, 0.3);">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <Label font="$x1" layoutX="250.0" layoutY="113.0" text="AUTOR(ES):" />
+                <TextField fx:id="autores" layoutX="319.0" layoutY="110.0" prefWidth="452.0" style="-fx-background-insets: 1, 2, 3;&#10;-fx-background-radius:9 0 8 0, 9 0 8 0, 9 0 8 0;" />
+                <TextField id="cota" fx:id="n_cota" alignment="CENTER" editable="false" layoutX="12.0" layoutY="341.0" prefHeight="46.0" prefWidth="200.0" style="-fx-background-insets: 1, 2, 3;&#10;-fx-background-radius:9 0 8 0, 9 0 8 0, 9 0 8 0;" />
+                <TextArea fx:id="indice" layoutX="264.0" layoutY="348.0" prefHeight="137.0" prefWidth="509.0" style="-fx-background-insets: 1, 2, 3;&#10;-fx-background-radius:9 0 8 0, 9 0 8 0, 9 0 8 0;" wrapText="true" />
+                <TextArea fx:id="titulo" layoutX="320.0" layoutY="51.0" prefHeight="46.000099999997474" prefWidth="452.0" style="-fx-background-insets: 1, 2, 3;&#10;-fx-background-radius:9 0 8 0, 9 0 8 0, 9 0 8 0;" wrapText="true" />
+                <Label font="$x1" layoutX="351.0" layoutY="292.0" text="TUTOR ACADÉMICO" />
+                <Label font="$x1" layoutX="574.0" layoutY="292.0" text="TUTOR INSDUSTRIAL" />
+                <TextField fx:id="academico" layoutX="309.0" layoutY="313.0" prefWidth="200.0" style="fx-background-insets: 1, 2, 3;&#10;-fx-background-radius:9 0 8 0, 9 0 8 0, 9 0 8 0;" text="--" />
+                <TextField fx:id="industrial" layoutX="534.0" layoutY="313.0" prefWidth="200.0" style="fx-background-insets: 1, 2, 3;&#10;-fx-background-radius:9 0 8 0, 9 0 8 0, 9 0 8 0;" text="--" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="INVENTARIO">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="inventario" prefHeight="499.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <columns>
+                    <TableColumn maxWidth="50000.0" prefWidth="100.0" text="COTA" fx:id="cota" />
+                    <TableColumn maxWidth="50000.0" prefWidth="700.0" text="DESCRIPCION" fx:id="descripcion" />
+                  </columns>
+                  <contextMenu>
+                    <ContextMenu>
+                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#AÑADIR_LIBRO" text="AÑADIR" fx:id="añadir" />
+                        <MenuItem mnemonicParsing="false" onAction="#ELIMINAR_LIBRO" text="ELIMINAR" fx:id="eliminar" />
+                        <MenuItem mnemonicParsing="false" onAction="#MODIFICAR_LIBRO" text="MODIFICAR" fx:id="modificar" />
+                        <MenuItem mnemonicParsing="false" onAction="#REFRESCAR_INVENTARIO" text="REFRESCAR" fx:id="refrescar" />
+                      </items>
+                    </ContextMenu>
+                  </contextMenu>
+                  <stylesheets>
+                    <URL value="@../MODELO/estilos.css" />
+                  </stylesheets>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>

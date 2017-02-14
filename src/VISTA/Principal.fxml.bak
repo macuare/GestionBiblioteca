@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="base" blendMode="MULTIPLY" maxHeight="600.0" maxWidth="800.0" prefHeight="513.0" prefWidth="776.0" xmlns:fx="http://javafx.com/fxml" fx:controller="CONTROLADOR.PrincipalController">
+  <children>
+    <Pane id="panel" prefHeight="513.0" prefWidth="775.8034057617188" style="-fx-background-color:rgba(39, 238, 0, 0.1);&#10;-fx-effect: dropshadow( one-pass-box , black , 20 , 0.0 , 5 , 5);&#10;-fx-background-radius: 30;" />
+    <ImageView fitHeight="513.0" fitWidth="775.803409077512" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../IMAGENES/Tulpan.png" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="460.94690099942306" fitWidth="178.9931182861328" layoutX="305.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../IMAGENES/caribay.png" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <MenuBar fx:id="menu" layoutX="358.0" prefWidth="417.999977929685" style="  -fx-background-color:&#10;        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),&#10;        linear-gradient(#020b02, #3a3a3a),&#10;        linear-gradient(#9d9e9d 0%, #6b6a6b 20%, #343534 80%, #242424 100%),&#10;        linear-gradient(#8a8a8a 0%, #6b6a6b 20%, #343534 80%, #262626 100%),&#10;        linear-gradient(#777777 0%, #606060 50%, #505250 51%, #2a2b2a 100%);&#10;    -fx-background-insets: 0,1,4,5,6;&#10;    -fx-background-radius: 9,8,5,4,3;&#10;    -fx-padding: 5 10 5 10;&#10;    -fx-font-family: &quot;Helvetica&quot;;&#10;    -fx-font-size: 12px;&#10;    -fx-font-weight: bold;&#10;    -fx-text-fill: white;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);">
+      <menus>
+        <Menu mnemonicParsing="false" text="Archivo" fx:id="menu_archivo">
+          <items>
+            <MenuItem disable="true" mnemonicParsing="false" onAction="#CREAR_NUEVO_USUARIO" text="NUEVO USUARIO" fx:id="usuario" />
+            <MenuItem mnemonicParsing="false" onAction="#CERRAR_APLICACION" text="CERRAR APLICACIÓN" fx:id="cerrar" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" style="" text="Registros" fx:id="menu_registros">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#VENTANA_LIBROS" style="" text="LIBROS" fx:id="libros" />
+            <MenuItem mnemonicParsing="false" onAction="#VENTANA_ANALISIS" text="ANALISIS" fx:id="analisis" />
+            <MenuItem mnemonicParsing="false" onAction="#VENTANA_PRESTAMOS" text="PRESTAMOS" fx:id="prestamos" />
+            <MenuItem mnemonicParsing="false" onAction="#VENTANA_USUARIOS" text="USUARIOS" fx:id="usuarios" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Reportes" fx:id="menu_reportes">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#CREAR_ETIQUETAS_COTAS" text="ETIQUETAS" fx:id="etiquetas" />
+            <MenuItem mnemonicParsing="false" text="LISTADOS" fx:id="listados" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Acerca" fx:id="menu_acerca">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#ACERCADE" style="" text="Ayuda" fx:id="acerca" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <ImageView fx:id="estrella7" fitHeight="41.0" fitWidth="49.8431357828776" layoutX="484.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../IMAGENES/estrella.png" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <ImageView fx:id="estrella9" fitHeight="41.0" fitWidth="49.8431357828776" layoutX="542.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../IMAGENES/estrella.png" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <ImageView fx:id="estrella10" fitHeight="41.0" fitWidth="49.8431357828776" layoutX="492.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../IMAGENES/estrella.png" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <ImageView fx:id="estrella8" fitHeight="41.0" fitWidth="49.8431357828776" layoutX="459.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../IMAGENES/estrella.png" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <ImageView fx:id="estrella6" fitHeight="41.0" fitWidth="49.8431357828776" layoutX="582.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../IMAGENES/estrella.png" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <ImageView fx:id="estrella4" fitHeight="41.0" fitWidth="49.8431357828776" layoutX="163.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../IMAGENES/estrella.png" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <ImageView fx:id="estrella1" fitHeight="41.0" fitWidth="49.8431357828776" layoutX="163.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../IMAGENES/estrella.png" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <ImageView fx:id="estrella2" fitHeight="41.0" fitWidth="49.8431357828776" layoutX="255.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../IMAGENES/estrella.png" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <ImageView fx:id="estrella3" fitHeight="41.0" fitWidth="49.8431357828776" layoutX="230.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../IMAGENES/estrella.png" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <ImageView fx:id="estrella5" fitHeight="41.0" fitWidth="49.8431357828776" layoutX="255.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../IMAGENES/estrella.png" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+  </children>
+</AnchorPane>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="250.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml">
+  <children>
+    <ImageView fitHeight="250.0" fitWidth="400.0" pickOnBounds="true">
+      <image>
+        <Image url="@../IMAGENES/error.jpg" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <TextArea layoutX="7.0" layoutY="7.0" prefHeight="236.0" prefWidth="386.0" style="-fx-background-color: rgba(251, 204,45, 0.3); -fx-background-radius: 20;&#10;    -fx-font-weight: bold;&#10;    -fx-font-size: 14px;" text="DESEA REALIZAR ESTA OPERACIÓN...?hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh&#10;&#10;" wrapText="true" />
+    <Button layoutX="136.0" layoutY="199.0" minHeight="31.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="129.0" style="-fx-background-color:&#10;        linear-gradient(#ffd65b, #e68400),&#10;        linear-gradient(#ffef84, #f2ba44),&#10;        linear-gradient(#ffea6a, #efaa22),&#10;        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),&#10;        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,2,3,0;&#10;    -fx-text-fill: #654b00;&#10;    -fx-font-weight: bold;&#10;    -fx-font-size: 14px;&#10;    -fx-padding: 10 20 10 20;" text="ACEPTAR" />
+  </children>
+</AnchorPane>
